@@ -43,8 +43,8 @@
       <p><a href="{{$entry->href}}" target="_blank">{{$entry->title}}</a></p>
 
       <div class="likes pull-right">
-        <span class="glyphicon glyphicon-thumbs-up"></span>
-        <span class="glyphicon glyphicon-thumbs-down"></span>
+        <span class="glyphicon glyphicon-thumbs-up vote" data-entry="{{$entry->id}}" data-direction="up"></span>
+        <span class="glyphicon glyphicon-thumbs-down vote" data-entry="{{$entry->id}}" data-direction="down"></span>
       </div>
 
       <small>{{$entry->domain}}</small>
@@ -109,6 +109,25 @@
           }
         },
         "json"
+      );
+
+      return false;
+    });
+
+    $(".vote").click(function()
+    {
+      var entry = $(this).data('entry');
+      var direction = $(this).data('direction');
+
+      $.post(
+        '/entry/'+entry+'/'+direction+'vote',
+        {},
+        function(data)
+        {
+          if(data['status'] == true)
+            $("#content .alert.alert-info").click();
+        },
+        'json'
       );
 
       return false;

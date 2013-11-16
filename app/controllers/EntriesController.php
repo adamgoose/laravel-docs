@@ -28,4 +28,26 @@ class EntriesController extends BaseController {
     return Response::json($response);
   }
 
+  public function postVote($id, $direction)
+  {
+    try {
+
+      $voteKey = 'vote'.$id.$direction;
+
+      if(!Session::has($voteKey)) {
+
+        $entry = Entry::findOrFail($id);
+        $entry->{$direction.'s'} = $entry->getOriginal($direction.'s') + 1;
+        $entry->save();
+
+        Session::put($voteKey, true);
+
+      }
+
+      return Response::json(['status' => true]);
+    } catch (ModelNotFoundException $e) {
+      return Response::json(['status' => false]);
+    }
+  }
+
 }

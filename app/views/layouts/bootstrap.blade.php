@@ -19,7 +19,14 @@
     <div class="container">
 
 
-      <h1>Documentation</h1>
+      <h1>
+        Laravel Documentation
+        <small>
+          <a href="/" class="text-muted">
+            <span class="pull-right glyphicon glyphicon-home"></span>
+          </a>
+        </small>
+      </h1>
 
       <hr>
 

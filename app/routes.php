@@ -13,3 +13,5 @@ Route::group(['prefix' => 'docs'], function()
   Route::post('{page}/entries/{key}', 'EntriesController@postEntry');
 
 });
+
+Route::post('entry/{id}/{direction}vote', 'EntriesController@postVote');
