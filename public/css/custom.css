@@ -2,11 +2,11 @@ a.active {
   font-weight: bold;
 }
 
-#content * {
+#content > * {
   cursor: pointer;
 }
 
-#content *.selected {
+#content > *.selected {
   background-color: lightblue;
   padding: 5px;
   border-radius: 5px;
@@ -33,4 +33,22 @@ a.active {
   width: 100%;
   height: 5px;
   margin-bottom: 0px;
+}
+
+#tooltips .adder {
+  color: #ccc;
+}
+
+#tooltips .adder:hover {
+  color: black;
+}
+
+#tooltips .tooltip-inner {
+  padding: 0;
+  color: #ccc;
+}
+
+#tooltips .tooltip-arrow {
+  /*border-left-color: #5BC0DE;*/
+  border-left-color: #ccc;
 }

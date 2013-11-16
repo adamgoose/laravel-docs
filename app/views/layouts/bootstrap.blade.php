@@ -39,7 +39,19 @@
 
         <div class="col-md-3" id="entries-container">
 
-          <div id="entries" data-spy="affix" data-offset-top="50"></div>
+          <div id="entries" data-spy="affix" data-offset-top="50">
+            
+            <h2>Welcome!</h2>
+
+            <p class="lead">To get started, click on a paragraph of the documentation!</p>
+
+            <p>This is a place where you can share your blog articles, videos, tutorials, packages, etc. that are related to any particular documentation item.</p>
+
+            <p>Say, for example, you write a blog article about Laravel's Caching system, specifically the <code>Cache::forever()</code> method. You could click on the code example in the documentation for that method, and add a link to your blog article. That way, when users are reading the documentation and come across the method, they'll find your blog article too!</p>
+
+            <p>Please use this collection to your advantage, both while learning and while trying to share your passion for Laravel.</p>
+
+          </div>
 
         </div>
 
@@ -54,16 +66,20 @@
       $(function(){
         $("#navigation a[href='/{{Request::path()}}']").addClass('active');
 
-        $("#content > *").each(function(key, item)
+        $("#content > *:not(p:has(a[name]))").each(function(key, item)
         {
           $(item).data('key', key);
         });
 
-        $("#content > *").click(function()
+        $("#content > *:not(p:has(a[name]))").click(function()
         {
           var classes = "alert alert-info";
+          var progressbar = $("<div />").addClass('progress progress-striped active').html($("<div />").addClass('progress-bar progress-bar-info').attr('role', 'progressbar').attr('aria-valuenow', 100).attr('aria-valuemin', 0).attr('aria-valuemax', 100).css('width', '100%').html($("<span />").addClass('sr-only').text('Loading...')));
+
           $("#content *").removeClass(classes);
           $(this).addClass(classes);
+
+          $("#entries").html(progressbar);
 
           $.get(
             '/docs/{{$page}}/entries/' + $(this).data('key'),
