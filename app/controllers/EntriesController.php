@@ -4,7 +4,20 @@ class EntriesController extends BaseController {
 
   public function getEntries($page, $key)
   {
-    $entries = Entry::select('*', DB::raw('`ups` + `downs` as `votes`'), DB::raw('`ups`/(`ups`+`downs`) as `percent`'))->wherePage($page)->whereKey($key)->orderBy('percent', 'desc')->orderBy('votes', 'desc')->get();
+    $entries = Entry::select(
+        '*',
+        DB::raw('`ups` + `downs` as `votes`'),
+        DB::raw('`ups`/(`ups`+`downs`) as `percent`')
+      )->wherePage($page)
+      ->where(function($query) use ($key)
+      {
+        if($key != 0)
+          $query->where('key', '>=', $key-2)
+           ->where('key', '<=', $key+2);
+      })
+      ->orderBy('percent', 'desc')
+      ->orderBy('votes', 'desc')
+      ->get();
 
     return View::make('entries')
       ->withPage($page)

@@ -98,6 +98,8 @@
           );
         });
 
+        $("#content h1").append($("<small />").text(' (View all)'));
+
         $("#entries").width($("#entries-container").width());
       });
     </script>
