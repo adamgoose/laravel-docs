@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Laravel Documentation</title>
+    <title>Laravel Crowdsourced Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
 
       <div class="container">
         <h1>
-          Laravel Documentation
+          Laravel Crowdsourced Documentation
           <small>
             <a href="/">
               <span class="pull-right glyphicon glyphicon-home"></span>
