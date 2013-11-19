@@ -64,7 +64,7 @@
 
 @if($entries->isEmpty())
 
-  <p class="lead">No entries for this item.</p>
+  <p class="lead">No entries for this {{$key == 0 ? 'chapter' : 'item'}}.</p>
 
 @endif
 
@@ -99,7 +99,7 @@
         function(data)
         {
           if(data['status'] == true)
-            $("#content .alert.alert-info").click();
+            $("#content .active").click();
           else {
             $("#newEntryButton").removeAttr('disabled');
             $.each(data['messages'], function(key, item)
@@ -125,7 +125,7 @@
         function(data)
         {
           if(data['status'] == true)
-            $("#content .alert.alert-info").click();
+            $("#content .active").click();
         },
         'json'
       );
