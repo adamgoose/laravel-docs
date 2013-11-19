@@ -23,9 +23,29 @@
       <div class="container">
         <h1>
           Laravel Crowdsourced Documentation
-          <small>
+          <small class="pull-right">
+            <a href="http://laravel.com" target="_blank">
+              Laravel.com
+            </a>
+            |
+            <a href="http://laravel.com/api" target="_blank">
+              API
+            </a>
+            |
+            <a href="http://github.com/laravel/laravel" target="_blank">
+              GitHub
+            </a>
+            |
+            <a href="http://forums.laravel.io" target="_blank">
+              Forums
+            </a>
+            |
+            <a href="http://twitter.com/laravelphp" target="_blank">
+              Twitter
+            </a>
+            |
             <a href="/">
-              <span class="pull-right glyphicon glyphicon-home"></span>
+              <span class="glyphicon glyphicon-home"></span>
             </a>
           </small>
         </h1>
@@ -37,9 +57,13 @@
 
       <div class="row-fluid">
         
-        <div class="col-md-3" id="navigation">
+        <div class="col-md-3" id="navigation-container">
+
+          <div id="navigation" data-spy="affix" data-offset-top="50">
           
-          {{$navigation}}
+            {{$navigation}}
+
+          </div>
 
         </div>
 

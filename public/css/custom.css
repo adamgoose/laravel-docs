@@ -28,6 +28,10 @@ a.active {
   color: white;
 }
 
+#navigation {
+  top: 50px;
+}
+
 #navigation ul {
   padding-left: 20px;
 }
