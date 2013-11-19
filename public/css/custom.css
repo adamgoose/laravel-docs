@@ -1,19 +1,76 @@
+h1,h2,h3,h4,h5 {
+  color: #555;
+}
+
+a, a:visited {
+  color: #F47063;
+}
+
 a.active {
   font-weight: bold;
+}
+
+#banner {
+  padding: 10px;
+  background-color: #F47063;
+  margin-bottom: 30px;
+}
+
+#banner h1 {
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.4em;
+  text-shadow: 1px 1px 4px #E12310;
+}
+
+#banner h1 small a {
+  color: white;
+}
+
+#navigation ul {
+  padding-left: 20px;
+}
+
+#navigation ul li {
+  list-style-type: none;
 }
 
 #content > * {
   cursor: pointer;
 }
 
-#content > *.selected {
-  background-color: lightblue;
-  padding: 5px;
-  border-radius: 5px;
+#content > *.active {
+  border-left: 5px solid #F47063;
+  border-top: 1px solid #F47063;
+  border-bottom: 1px solid #F47063;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: -15px;
+}
+
+#content > *.prettyprint.active {
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 0;
 }
 
 #entries {
   top: 50px;
+}
+
+#entries .btn {
+  color: white;
+}
+
+#entries .progress-bar-laravel {
+  background-color: #F47063;
+}
+
+#entries blockquote {
+  border-left-color: #F47063;
 }
 
 #entries .likes {
@@ -35,20 +92,70 @@ a.active {
   margin-bottom: 0px;
 }
 
-#tooltips .adder {
-  color: #ccc;
+p {
+  line-height: 1.6em;
+  font-weight: 300;
 }
-
-#tooltips .adder:hover {
-  color: black;
+p code {
+  display: inline-block;
+  font-size: 0.75em;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  background-color: #eee;
+  color: #555;
+  padding: 0em 0.6em;
+  margin: 0 0.2em;
 }
-
-#tooltips .tooltip-inner {
-  padding: 0;
-  color: #ccc;
+pre {
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  background-color: #333;
+  padding: 20px;
+  font-size: 0.7em;
+  border: 0;
+  color: #e9e4e5;
+  line-height: 1.9em;
+  margin: 1em 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
-
-#tooltips .tooltip-arrow {
-  /*border-left-color: #5BC0DE;*/
-  border-left-color: #ccc;
+pre .pln {
+  color: #e9e4e5;
+}
+pre .str {
+  color: #bcd42a;
+}
+pre .kwd {
+  color: #4bb1b1;
+}
+pre .com {
+  color: #888888;
+}
+pre .typ {
+  color: #ef7c61;
+}
+pre .lit {
+  color: #bcd42a;
+}
+pre .pun,
+pre .opn,
+pre .clo {
+  color: #ffffff;
+}
+pre .tag {
+  color: #4bb1b1;
+}
+pre .atn {
+  color: #ef7c61;
+}
+pre .atv {
+  color: #bcd42a;
+}
+pre .dec,
+pre .var {
+  color: #660066;
+}
+pre .fun {
+  color: #ff0000;
+}
+pre code {
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
 }

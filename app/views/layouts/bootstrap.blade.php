@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/custom.css">
 
+    @yield('styles')
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -16,19 +18,22 @@
   </head>
   <body>
 
+    <div id="banner">
+
+      <div class="container">
+        <h1>
+          Laravel Documentation
+          <small>
+            <a href="/">
+              <span class="pull-right glyphicon glyphicon-home"></span>
+            </a>
+          </small>
+        </h1>
+      </div>
+
+    </div>
+
     <div class="container">
-
-
-      <h1>
-        Laravel Documentation
-        <small>
-          <a href="/" class="text-muted">
-            <span class="pull-right glyphicon glyphicon-home"></span>
-          </a>
-        </small>
-      </h1>
-
-      <hr>
 
       <div class="row-fluid">
         
@@ -80,8 +85,8 @@
 
         $("#content > *:not(p:has(a[name]))").click(function()
         {
-          var classes = "alert alert-info";
-          var progressbar = $("<div />").addClass('progress progress-striped active').html($("<div />").addClass('progress-bar progress-bar-info').attr('role', 'progressbar').attr('aria-valuenow', 100).attr('aria-valuemin', 0).attr('aria-valuemax', 100).css('width', '100%').html($("<span />").addClass('sr-only').text('Loading...')));
+          var classes = "active";
+          var progressbar = $("<div />").addClass('progress progress-striped active').html($("<div />").addClass('progress-bar progress-bar-laravel').attr('role', 'progressbar').attr('aria-valuenow', 100).attr('aria-valuemin', 0).attr('aria-valuemax', 100).css('width', '100%').html($("<span />").addClass('sr-only').text('Loading...')));
 
           $("#content *").removeClass(classes);
           $(this).addClass(classes);
@@ -103,5 +108,7 @@
         $("#entries").width($("#entries-container").width());
       });
     </script>
+
+    @yield('scripts')
   </body>
 </html>
